@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Cpf.Cnpj </PackageId>
+    <Version>1.0.2</Version>
+    <Authors>Rafael Bonaldi - rafaelbonaldi@gmail.com</Authors>
+    <Description>Validar e/ou formatar os valores de CPF e CNPJ. Documentação brasileira.</Description>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageReadmeFile>README nuget.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/RBonaldi/CPF.CNPJ</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/RBonaldi/CPF.CNPJ</RepositoryUrl>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageTags>cpf, cnpj, validar, formatar</PackageTags>
+    <RepositoryType>GitHub</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\Assets\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README nuget.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
