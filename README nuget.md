@@ -3,7 +3,7 @@ Create object.
 # CreateRandomEntityValues
 
 ```cs
-using CreateRandomEntityValuesLibrary;
+using RandomEntity;
 
 Entity.CreateMock<[name_entity]>();     // filled object
 

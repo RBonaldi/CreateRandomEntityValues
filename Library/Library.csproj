@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>CreateRandomEntityValues </PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Rafael Bonaldi - rafaelbonaldi@gmail.com</Authors>
     <Description>Create filled object. Ideal for use in tests and mock.</Description>
     <PackageIcon>logo.png</PackageIcon>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace CreateRandomEntityValuesLibrary
+namespace RandomEntity
 {
     public static partial class Entity
 	{
@@ -22,18 +22,15 @@ namespace CreateRandomEntityValuesLibrary
 					PropertyInfo propertyInfoSet = 
 						objectToFill.GetType().GetProperty(propertyInfo.Name);
 
-					if (value != null)
+					if(propertyInfoSet.PropertyType.Name == "Guid")
+                    {
+						propertyInfoSet.SetValue(objectToFill, Convert.ChangeType(
+						Guid.Parse(value), propertyInfoSet.PropertyType), null);
+					}
+					else if (value != null)
 					{
-						if (value == "guid")
-                        {
-							propertyInfoSet.SetValue(objectToFill, Convert.ChangeType(
-							Guid.NewGuid(), propertyInfoSet.PropertyType), null);
-						}
-						else
-                        {
-							propertyInfoSet.SetValue(objectToFill, Convert.ChangeType(
-							value, propertyInfoSet.PropertyType), null);
-						}
+						propertyInfoSet.SetValue(objectToFill, Convert.ChangeType(
+						value, propertyInfoSet.PropertyType), null);
 					}
 				}
 			}
@@ -47,7 +44,7 @@ namespace CreateRandomEntityValuesLibrary
 			{
 				case string i when i.Contains("int") || i.Contains("double") || 
 				i.Contains("long") || i.Contains("float") || i.Contains("decimal") ||
-				i.Contains("short"):
+				i.Contains("short") || i.Contains("single"):
 					countParameterNumeric++;
 					return countParameterNumeric.ToString();
 				case string i when i.Contains("char"):
@@ -63,7 +60,7 @@ namespace CreateRandomEntityValuesLibrary
 				case string i when i.Contains("string"):
 					return name+"_test";
 				case string i when i.Contains("guid"):
-					return "guid";
+					return Guid.NewGuid().ToString();
 				case string i when i.Contains("object"):
 					return "object";
 				default:
